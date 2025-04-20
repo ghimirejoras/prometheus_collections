@@ -65,6 +65,16 @@ scrape_configs:
     - targets:
       - 'host.docker.internal:9115'
 
+  - job_name: "blackbox-targets"
+    metrics_path: /probe 
+    params: 
+      modules: 
+      - dns_google
+    static_configs:
+      - targets:
+          - '8.8.8.8'
+
+
 
 
 

@@ -1,4 +1,8 @@
 modules:
+  http_2xx_ipv4:
+    prober: http
+    http:
+      preferred_ip_protocol: "ip4" 
   http_2xx:
     prober: http
     http:
@@ -60,3 +64,9 @@ modules:
     timeout: 5s
     icmp:
       ttl: 5
+  dns_google:
+    prober: dns 
+    dns: 
+      transport_protocol: tcp 
+      query_name: "www.google.com"
+      
